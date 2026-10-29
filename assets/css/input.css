@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'vazir';
+    src: url(../fonts/Vazir.woff);
+}
+
+body,
+button,
+input {
+    font-family: 'vazir';
+}
+
+@keyframes smoothKenBurns {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  /* در 5 درصد اول کاملاً ظاهر می‌شود */
+  5% {
+    opacity: 1;
+  }
+  /* تا ثانیه 50 روی صفحه می‌ماند و آرام زوم می‌شود */
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  /* از 50 تا 55 خیلی سریع محو می‌شود تا جایش را به عکس بعدی بدهد */
+  55% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* عکس اول */
+.bg-slide-1 {
+  background-image: url('../img/food.jpg'); /* مسیر عکس اول */
+  background-size: cover;
+  background-position: center;
+  animation: smoothKenBurns 20s infinite;
+}
+
+/* عکس دوم با 10 ثانیه تاخیر دقیق */
+.bg-slide-2 {
+  background-image: url('../img/Dey-Fried-Chicken-BG.jpg'); /* مسیر عکس دوم */
+  background-size: cover;
+  background-position: center;
+  animation: smoothKenBurns 20s infinite;
+  animation-delay: 10s;
+}
